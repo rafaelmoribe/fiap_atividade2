@@ -1,5 +1,6 @@
 package com.grupog.atividadefase2.dao
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import com.grupog.atividadefase2.model.Imovel
@@ -8,8 +9,7 @@ class ImovelDAO (val context: Context, val imovel: Imovel) {
 
     val dbhelper = DataBase.getDataBase(context)
 
-    public fun gravar() {
-
+    public fun createImovel() {
         val db = dbhelper.writableDatabase
 
         val dados = ContentValues()
@@ -24,5 +24,6 @@ class ImovelDAO (val context: Context, val imovel: Imovel) {
 
         db.close()
     }
+
 }
 

@@ -10,96 +10,43 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
+        android:contentDescription="Logo da Prefeitura de Recife, Horizontal, com Fundo Azul, Emblema e Letras em Branco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_gestao_pcr_alt_horizontal" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="291dp"
-        android:layout_height="296dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="1dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.555">
-
-        <TextView
-            android:id="@+id/textView_PrincipaisAtalhos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Principais Atalhos"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/vermelho_botao"
-            android:text="IPTU" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/verde_botao"
-            android:text="Licitações" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/amarelo_botao"
-            android:text="Regulações" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/cinza_botao"
-            android:text="COVID-19" />
-    </LinearLayout>
+        app:srcCompat="@drawable/logo_prefeitura_recife_horizontal" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="289dp"
-        android:layout_height="175dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:layout_marginBottom="20dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewUserCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nome" />
+            android:text="Código de Usuário" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextTextUserCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Senha" />
@@ -109,15 +56,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
             android:id="@+id/button_login"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="@color/cinza_botao"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/azul_background"
             android:text="Login"
-            android:textColor="@color/black" />
+            android:textColor="@color/white"
+            app:cornerRadius="30dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

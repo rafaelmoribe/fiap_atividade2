@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/noto"
+    android:padding="32dp"
+    tools:context=".AtualizarImovelActivity">
+
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_prefeitura_recife_horizontal" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAtualizarImovel"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewLogo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageViewLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo">
+
+        <Button
+            android:id="@+id/buttonHeaderImovel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
+            android:text="Imóveis"
+            android:textColor="@color/azul_background"
+            android:textSize="10sp"
+            app:cornerRadius="30dp"
+            app:icon="?attr/homeAsUpIndicator"
+            app:iconGravity="textTop"
+            app:iconPadding="3dp"
+            app:iconSize="12dp"
+            app:iconTint="@color/azul_background" />
+
+        <Button
+            android:id="@+id/buttonHeaderHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:backgroundTint="@color/verde_botao"
+            android:text="Home"
+            android:textColor="@color/verde_botao"
+            android:textSize="10sp"
+            app:cornerRadius="30dp"
+            app:icon="@drawable/location_away_48px"
+            app:iconGravity="textTop"
+            app:iconPadding="3dp"
+            app:iconSize="12dp"
+            app:iconTint="@color/verde_botao" />
+
+        <Button
+            android:id="@+id/buttonHeaderLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:backgroundTint="@color/vermelho_botao"
+            android:text="Logout"
+            android:textColor="@color/vermelho_botao"
+            android:textSize="10sp"
+            app:cornerRadius="30dp"
+            app:icon="@drawable/logout_48px"
+            app:iconGravity="textTop"
+            app:iconPadding="3dp"
+            app:iconSize="12dp"
+            app:iconTint="@color/vermelho_botao" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewAtualizarImovel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Atualizar Imóvel NumeroInscrição"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="289dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAtualizarImovel">
+
+        <TextView
+            android:id="@+id/textViewEndereçoAtualizarImovel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Endereço" />
+
+        <EditText
+            android:id="@+id/editTextTextEndereçoAtualizarImovel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textViewCEPAtualizarImovel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CEP" />
+
+        <EditText
+            android:id="@+id/editTextTextCEPAtualizarImovel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textViewTamanhoAtualizarImovel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tamanho (m²)" />
+
+        <EditText
+            android:id="@+id/editTextTextTamanhoAtualizarImovel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonCancelarAtualizacao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/vermelho_botao"
+                android:text="Cancelar"
+                android:textColor="@color/white"
+                app:cornerRadius="30dp" />
+
+            <Button
+                android:id="@+id/buttonAtualizar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/verde_botao"
+                android:text="Atualizar"
+                android:textColor="@color/white"
+                app:cornerRadius="30dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

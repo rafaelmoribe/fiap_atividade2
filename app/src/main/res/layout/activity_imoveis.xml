@@ -6,171 +6,198 @@
     android:layout_height="match_parent"
     android:background="@drawable/noto"
     android:padding="32dp"
-    tools:context=".imoveis_activity">
+    tools:context=".ImoveisActivity">
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_gestao_pcr_alt_horizontal" />
+        app:srcCompat="@drawable/logo_prefeitura_recife_horizontal" />
+
+    <Button
+        android:id="@+id/buttonHeaderLogout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:backgroundTint="@color/vermelho_botao"
+        android:text="Logout"
+        android:textColor="@color/vermelho_botao"
+        android:textSize="10sp"
+        app:cornerRadius="30dp"
+        app:icon="@drawable/logout_48px"
+        app:iconGravity="textTop"
+        app:iconPadding="3dp"
+        app:iconSize="12dp"
+        app:iconTint="@color/vermelho_botao"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
+
+    <Button
+        android:id="@+id/buttonHeaderHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="1dp"
+        android:layout_marginTop="41dp"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:backgroundTint="@color/verde_botao"
+        android:text="Home"
+        android:textColor="@color/verde_botao"
+        android:textSize="10sp"
+        app:cornerRadius="30dp"
+        app:icon="@drawable/location_away_48px"
+        app:iconGravity="textTop"
+        app:iconPadding="3dp"
+        app:iconSize="12dp"
+        app:iconTint="@color/verde_botao"
+        app:layout_constraintEnd_toStartOf="@+id/buttonHeaderLogout"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
-
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/vermelho_botao"
-            android:text="Logout" />
-
-        <Button
-            android:id="@+id/button10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/verde_botao"
-            android:text="Home" />
-
-        <Button
-            android:id="@+id/button11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/azul_background"
-            android:text="Imóveis" />
-    </LinearLayout>
-
-    <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="286dp"
-        android:layout_height="304dp"
-        android:layout_marginTop="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textViewUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Usuário: Rafael (trocar)" />
+            android:text="Usuário:" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textViewUserCPF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CPF: 346.654.344-90 (trocar)" />
+            android:text="CPF:" />
 
         <Button
-            android:id="@+id/button12"
+            android:id="@+id/buttonCadastrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/cinza_botao"
+            android:backgroundTint="@color/azul_background"
             android:text="Cadastrar"
-            android:textColor="@color/black" />
+            android:textColor="@color/white"
+            app:icon="@android:drawable/ic_menu_add"
+            app:iconGravity="end"
+            app:iconSize="30dp"
+            app:iconTint="#FFFFFF" />
 
-        <Button
-            android:id="@+id/button13"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/cinza_botao"
-            android:text="Outros Serviços"
-            android:textColor="@color/black" />
+    </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Imóveis" />
+    <TextView
+        android:id="@+id/textViewMeusImoveis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="Meus Imóveis"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@color/cinza_botao"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <LinearLayout
+            android:layout_width="235dp"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/textViewInscricaoImovel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Inscrição: 12893712" />
+
+            <TextView
+                android:id="@+id/textViewEndereçoImovel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Endereço: Rua do Rio, 214" />
+
+            <TextView
+                android:id="@+id/textViewCEPImovel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="CEP: 20.890-12" />
+
+            <TextView
+                android:id="@+id/textViewTamanhoImovel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Tamanho: 400 m2" />
+
+            <TextView
+                android:id="@+id/textViewIptuImovel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="IPTU: R$ 4000,00" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/cinza_botao"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="4dp">
+            <ImageButton
+                android:id="@+id/imageButtonDeletarImovel1"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF"
+                android:baselineAlignBottom="false"
+                android:minHeight="48dp"
+                android:scaleType="center"
+                app:srcCompat="@drawable/delete"
+                app:tint="@color/vermelho_botao"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:text="Inscrição: 12893712" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:text="Endereço: Rua do Rio, 214" />
-
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:text="CEP: 20.890-12" />
-
-                <TextView
-                    android:id="@+id/textView15"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:text="Tamanho: 400 m2" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:text="IPTU: R$ 4000,00" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/imageButton5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="#00FFFFFF"
-                    app:srcCompat="@drawable/delete" />
-
-                <ImageButton
-                    android:id="@+id/imageButton6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="#00FFFFFF"
-                    app:srcCompat="@drawable/square_edit_outline" />
-            </LinearLayout>
-
+            <ImageButton
+                android:id="@+id/imageButtonEditarImovel1"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF"
+                android:baselineAlignBottom="false"
+                android:minHeight="48dp"
+                android:scaleType="center"
+                app:srcCompat="@drawable/square_edit_outline"
+                app:tint="@color/amarelo_botao"
+                tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
 
     </LinearLayout>

@@ -1,12 +1,12 @@
 package com.grupog.atividadefase2.model
 
-data class Imovel (
+data class Imovel(
     var id_imovel: Int = 0,
     var inscricao: String = "",
     var endereco: String = "",
     var cep: String = "",
     var tamanho: Int = 0,
     var iptu: String = "",
-    var id_cidadao: String = "",
+    var id_cidadao: Int = 0,
 
-)
+    )

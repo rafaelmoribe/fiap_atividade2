@@ -8,9 +8,17 @@
         <entry key="..\:/AndroidStudioCode/AtividadeFase2/app/src/main/res/layout/activity_home.xml" value="0.2796875" />
         <entry key="..\:/AndroidStudioCode/AtividadeFase2/app/src/main/res/layout/activity_imoveis.xml" value="0.5" />
         <entry key="..\:/AndroidStudioCode/AtividadeFase2/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/layout/activity_home.xml" value="0.2421875" />
-        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/layout/activity_imoveis.xml" value="0.10104166666666667" />
-        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/layout/activity_main.xml" value="0.10104166666666667" />
+        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2185" />
+        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/drawable/background_activity.xml" value="0.2185" />
+        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2185" />
+        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/drawable/noto.xml" value="0.2185" />
+        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/drawable/right_arrow.xml" value="0.2185" />
+        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/layout/activity_atualizar_imovel.xml" value="0.4" />
+        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/layout/activity_cadastrar_imovel.xml" value="0.264" />
+        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/layout/activity_deletar_imovel.xml" value="0.1" />
+        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/layout/activity_imoveis.xml" value="0.31" />
+        <entry key="..\:/Users/anaso/fiap_atividade2/app/src/main/res/layout/activity_main.xml" value="0.264" />
       </map>
     </option>
   </component>
@@ -19,5 +27,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.264" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -6,93 +6,186 @@
     android:layout_height="match_parent"
     android:background="@drawable/noto"
     android:padding="32dp"
-    tools:context=".home_activity">
+    tools:context=".HomeActivity">
 
+
+    <Button
+        android:id="@+id/buttonHeaderLogout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:backgroundTint="@color/vermelho_botao"
+        android:text="Logout"
+        android:textColor="@color/vermelho_botao"
+        android:textSize="10sp"
+        app:cornerRadius="30dp"
+        app:icon="@drawable/logout_48px"
+        app:iconGravity="textTop"
+        app:iconPadding="3dp"
+        app:iconSize="12dp"
+        app:iconTint="@color/vermelho_botao"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/textViewPrincipaisAtalhos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Principais Atalhos"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonIPTU"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:backgroundTint="@color/vermelho_botao"
+            android:enabled="true"
+            android:text="IPTU"
+            android:clickable="true"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:cornerRadius="30dp"
+            app:icon="@drawable/arrow_outward_48px"
+            app:iconGravity="end"
+            app:iconSize="24dp"
+            app:iconTint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/buttonLicitacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:backgroundTint="@color/verde_botao"
+            android:enabled="true"
+            android:text="Licitações"
+            android:clickable="true"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:cornerRadius="30dp"
+            app:icon="@drawable/arrow_outward_48px"
+            app:iconGravity="end"
+            app:iconSize="24dp"
+            app:iconTint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/buttonRegulacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:backgroundTint="@color/amarelo_botao"
+            android:enabled="true"
+            android:text="Regulações"
+            android:clickable="true"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:cornerRadius="30dp"
+            app:icon="@drawable/arrow_outward_48px"
+            app:iconGravity="end"
+            app:iconSize="24dp"
+            app:iconTint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/buttonCovid19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:backgroundTint="@color/azul_background"
+            android:enabled="true"
+            android:text="COVID-19"
+            android:clickable="true"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:cornerRadius="30dp"
+            app:icon="@drawable/arrow_outward_48px"
+            app:iconGravity="end"
+            app:iconSize="24dp"
+            app:iconTint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/buttonOutrosServicos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:backgroundTint="@color/cinza_botao"
+            android:enabled="true"
+            android:minHeight="48dp"
+            android:text="Outros Serviços"
+            android:clickable="true"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:cornerRadius="30dp"
+            app:icon="@drawable/arrow_outward_48px"
+            app:iconGravity="end"
+            app:iconSize="24dp"
+            app:iconTint="#FFFFFF"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_gestao_pcr_alt_horizontal" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
-
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/vermelho_botao"
-            android:text="Logout" />
-
-        <Button
-            android:id="@+id/button10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/verde_botao"
-            android:text="Home" />
-
-        <Button
-            android:id="@+id/button11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/azul_background"
-            android:text="Imóveis" />
-    </LinearLayout>
+        app:srcCompat="@drawable/logo_prefeitura_recife_horizontal" />
 
     <LinearLayout
         android:layout_width="286dp"
-        android:layout_height="304dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textViewGreeting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Olá @@@" />
 
         <Button
-            android:id="@+id/button12"
+            android:id="@+id/buttonGerenciarMeusImoveis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/cinza_botao"
-            android:text="Meus imóveis"
-            android:textColor="@color/black" />
+            android:isScrollContainer="false"
+            android:text="Gerenciar Meus imóveis"
+            android:textColor="@color/black"
+            app:icon="@drawable/navigate_next_48px"
+            app:iconGravity="textEnd"
+            app:iconSize="30sp"
+            app:iconTint="@color/azul_background" />
 
-        <Button
-            android:id="@+id/button13"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/cinza_botao"
-            android:text="Outros Serviços"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
     </LinearLayout>
 
 

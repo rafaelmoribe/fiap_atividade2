@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.grupog.atividadefase2">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,11 +17,20 @@
         android:theme="@style/Theme.AtividadeFase2"
         tools:targetApi="31">
         <activity
-            android:name=".imoveis_activity"
+            android:name=".DeletarImovelActivity"
             android:exported="false" />
         <activity
-            android:name=".home_activity"
-            android:exported="false"></activity>
+            android:name=".AtualizarImovelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CadastrarImovelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ImoveisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

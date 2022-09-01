@@ -3,8 +3,6 @@ package com.grupog.atividadefase2.dao
 import android.content.ContentValues
 import android.content.Context
 import com.grupog.atividadefase2.model.Cidadao
-import com.grupog.atividadefase2.model.Imovel
-
 
 class CidadaoDAO (val context: Context, val cidadao: Cidadao) {
 

@@ -16,13 +16,15 @@ class DeletarImovelActivity : AppCompatActivity() {
         binding = ActivityDeletarImovelBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //recebe as variáveis da Activity Anterior (Home Imóveis)
         var inscricaoAtual = intent.getStringExtra("incrição_atual")
         var enderecoAtual = intent.getStringExtra("endereço_atual")
 
+        //Preenche o campo de texto com as informações atuais do imóvel a ser excluído
         var confirmacaoExclusao = "Tem certeza que quer deletar o Imóvel: $inscricaoAtual - $enderecoAtual"
-
         binding.textViewConfirmacaoDeletarImovel.text = confirmacaoExclusao
 
+        //Ações atreladas aos cliques nos botões da tela de Deletar Imóveis
         binding.buttonHeaderImovel.setOnClickListener({
             var intent = Intent(this,ImoveisActivity::class.java)
             startActivity(intent)
@@ -39,8 +41,8 @@ class DeletarImovelActivity : AppCompatActivity() {
         })
 
         binding.buttonConfirmacaoDeletarImovel.setOnClickListener({
-            //inserir função para apagar imovel no banco
-            //toast de sucesso
+            //falta inserir função para apagar imovel no banco
+            //falta inserir toast de sucesso
             //Toast.makeText(activity, mensagem, Toast.LENGTH_LONG).show()
             var intent = Intent(this,ImoveisActivity::class.java)
             startActivity(intent)

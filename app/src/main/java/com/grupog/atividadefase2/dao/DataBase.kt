@@ -10,7 +10,7 @@ import com.grupog.atividadefase2.model.Imovel
 import java.sql.DatabaseMetaData
 
 
-class DataBase(context: Context) : SQLiteOpenHelper(context, "app.db", null, 1) {
+class DataBase(context: Context) : SQLiteOpenHelper(context, "prefeitura_Recife.db", null, 1) {
 
     companion object {
         fun getDataBase(context: Context) : DataBase{
@@ -42,10 +42,9 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, "app.db", null, 1) 
                 "inscricao TEXT NOT NULL, " +
                 "endereco TEXT NOT NULL, " +
                 "cep TEXT NOT NULL, " +
-                "tamanho INTEGER, " +
-                "iptu TEXT NOT NULL, " +
-                "id_cidadao TEXT NOT NULL, " +
-                "FOREIGN KEY(id_cidadao) REFERENCES tbl_cidadao(id_cidadao))"
+                "tamanho INTEGER NOT NULL, " +
+                "iptu REAL NOT NULL, " +
+                "fk_cidadao INTEGER NOT NULL)"
         db!!.execSQL(sql)
     }
 

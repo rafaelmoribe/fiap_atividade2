@@ -18,7 +18,7 @@ class ImovelDAO (val context: Context, val imovel: Imovel) {
         dados.put("cep", imovel.cep)
         dados.put("tamanho", imovel.tamanho)
         dados.put("iptu", imovel.iptu)
-        dados.put("id_cidadao", imovel.id_cidadao)
+        dados.put("id_cidadao", imovel.fk_cidadao)
 
         db.insert("tbl_imovel", null, dados)
 

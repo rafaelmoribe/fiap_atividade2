@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar!!.hide()
-        gravarImovel()
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -50,24 +50,5 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
-
-    private fun gravarImovel() {
-        var imovel = Imovel(
-            0,
-            "001",
-            "Rua da Aurora, 268",
-            "50050-010",
-            88,
-            "1969",
-            0
-        )
-
-        val imovelDAO = ImovelDAO(this, imovel)
-        imovelDAO.createImovel()
-    }
-
-
-
 
 }

@@ -6,7 +6,7 @@ data class Imovel(
     var endereco: String = "",
     var cep: String = "",
     var tamanho: Int = 0,
-    var iptu: String = "",
-    var id_cidadao: Int = 0,
+    var iptu: Double = 0.0,
+    var fk_cidadao: Int = 0,
 
     )

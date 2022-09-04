@@ -35,6 +35,8 @@ class CadastrarImovelActivityViewModel : ViewModel() {
         } else {
             mIPTU.value = 0.005 * (tamanhoNovo * valorMetroQuadrado)
         }
+
+
     }
 
 

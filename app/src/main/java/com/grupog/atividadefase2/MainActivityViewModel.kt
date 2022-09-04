@@ -20,14 +20,17 @@ class MainActivityViewModel: ViewModel() {
         mAutorization.value = false
     }
 
-    fun getSecurityData(){
-        var cidadao = mCidadao.value!!
-        var forcaSenha = mSenha.value!!.length
+    fun getSecurityData(cpf:String){
+        val usuarioNoBanco:Boolean=false
 
-        //Critérios de Segurança: Código do Usuário ser menor que 10 e a Senha possuir mais de 3 caracteres
-        if (cidadao < 10 && forcaSenha > 3){
-            mAutorization.value = true
-        }
+
+
+
+
+
+
+
+        return
 
     }
 

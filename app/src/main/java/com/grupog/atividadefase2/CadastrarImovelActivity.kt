@@ -9,6 +9,7 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.ViewModelProvider
 import com.grupog.atividadefase2.dao.ImovelDAO
 import com.grupog.atividadefase2.databinding.ActivityCadastrarImovelBinding
+import com.grupog.atividadefase2.model.Cidadao
 import com.grupog.atividadefase2.model.Imovel
 
 class CadastrarImovelActivity : AppCompatActivity() {
@@ -19,7 +20,10 @@ class CadastrarImovelActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastrar_imovel)
         supportActionBar!!.hide()
+        var cidadao: Cidadao = intent.getSerializableExtra("cidadao") as Cidadao
 
+
+        var imovelDao:ImovelDAO = ImovelDAO(this)
         binding = ActivityCadastrarImovelBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -51,7 +55,7 @@ class CadastrarImovelActivity : AppCompatActivity() {
         //Ao clicar em cadastrar, será adicionado um novo Imóvel ao banco de dados
         // e será apresentado o valor previsto de IPTU, conforme calculado na View Model
         binding.buttonCadastrarNovoImovel.setOnClickListener({
-            gravarImovel()
+            gravarImovel(imovelDao,cidadao)
             Toast.makeText(this,"Solicitação Registrada. Previsão de IPTU: R$ ${String.format("%,.2f",cadastrarImovelViewModel.iptu.value)}",Toast.LENGTH_LONG).show()
             var intent = Intent(this,ImoveisActivity::class.java)
             startActivity(intent)
@@ -59,19 +63,20 @@ class CadastrarImovelActivity : AppCompatActivity() {
 
     }
 
-    private fun gravarImovel() {
+    private fun gravarImovel(imovelDAO: ImovelDAO, cidadao: Cidadao) {
+
         var imovel = Imovel(
             0,
             binding.editTextTextInscriONovoImovel.text.toString(),
             binding.editTextTextEndereONovoImovel.text.toString(),
             binding.editTextTextCepNovoImovel.text.toString(),
             binding.editTextTextTamanhoNovoImovel.text.toString().toInt(),
-            "",
-            0
+            binding.editTextTextTamanhoNovoImovel.text.toString().toInt()*(1+Math.random()), // Nao entendi aqui direito como chamar o metodo para calcular o IPTU...
+            cidadao.id_cidadao
         )
-
-        val imovelDAO = ImovelDAO(this, imovel)
-        imovelDAO.createImovel()
+        imovelDAO.createImovel(imovel)
+        //val imovelDAO = ImovelDAO(this)
+        //imovelDAO.createImovel(imovel)
     }
 
 

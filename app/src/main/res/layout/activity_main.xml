@@ -34,7 +34,7 @@
             android:id="@+id/textViewUserCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Código de Usuário" />
+            android:text="CPF de Usuário" />
 
         <EditText
             android:id="@+id/editTextTextUserCode"
@@ -71,4 +71,13 @@
             android:textColor="@color/white"
             app:cornerRadius="30dp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonActivityCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abrir Cadastro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

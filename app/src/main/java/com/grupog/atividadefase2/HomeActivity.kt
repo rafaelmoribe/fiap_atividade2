@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.grupog.atividadefase2.databinding.ActivityHomeBinding
+import com.grupog.atividadefase2.model.Cidadao
 
 
 class HomeActivity : AppCompatActivity() {
@@ -16,12 +17,17 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar!!.hide()
 
+        var cidadao:Cidadao = intent.getSerializableExtra("cidadao") as Cidadao
+
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.textViewGreeting.text = "Olá ${cidadao.nome}."
 
         //Ações atreladas aos cliques nos botões da tela Home
         binding.buttonGerenciarMeusImoveis.setOnClickListener({
             var intent = Intent(this,ImoveisActivity::class.java)
+            intent.putExtra("cidadao",cidadao)
             startActivity(intent)
         }
         )

@@ -19,12 +19,11 @@
         app:srcCompat="@drawable/logo_prefeitura_recife_horizontal" />
 
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="40dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewDeletarImovel"
         app:layout_constraintEnd_toEndOf="@+id/imageViewLogo"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imageViewLogo"
@@ -88,30 +87,35 @@
             app:iconTint="@color/vermelho_botao" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textViewDeletarImovel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="sans-serif-light"
-        android:text="Deletar Imóvel"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="289dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDeletarImovel">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/textViewNumeroDaMatricula1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Informe o número de inscrição do imóvel que deseja remover"
+            android:textColor="@android:color/holo_red_dark"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView2"
+            android:layout_width="309dp"
+            android:layout_height="221dp"
+            app:layoutManager="LinearLayoutManager" />
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
 
         <TextView
             android:id="@+id/textViewConfirmacaoDeletarImovel"
@@ -135,5 +139,17 @@
             app:icon="@drawable/delete"
             app:iconGravity="textEnd" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Apagar Imóvel"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

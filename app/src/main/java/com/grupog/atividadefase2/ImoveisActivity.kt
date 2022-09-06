@@ -78,16 +78,18 @@ class ImoveisActivity : AppCompatActivity() {
             intent.putExtra("endereço_atual",binding.textViewEndereOImovel1.text.toString())
             startActivity(intent)
         })
+        */
 
         //Ao clicar em Editar Imóvel, as informações atuais do Imóvel serão levadas para a próxima Activity
-        binding.imageButtonEditarImovel1.setOnClickListener({
+        binding.buttonAlterarDados.setOnClickListener({
             var intent = Intent(this,AtualizarImovelActivity::class.java)
-            intent.putExtra("endereço_atual",binding.textViewEndereOImovel1.text.toString())
-            intent.putExtra("cep_atual",binding.textViewCEPImovel1.text.toString())
-            intent.putExtra("tamanho_atual",binding.textViewTamanhoImovel1.text.toString())
+            //intent.putExtra("endereço_atual",binding.textViewEndereOImovel1.text.toString())
+            //intent.putExtra("cep_atual",binding.textViewCEPImovel1.text.toString())
+            //intent.putExtra("tamanho_atual",binding.textViewTamanhoImovel1.text.toString())
+            intent.putExtra("cidadao",cidadao)
             startActivity(intent)
         })
-        */
+
 
     }
 }

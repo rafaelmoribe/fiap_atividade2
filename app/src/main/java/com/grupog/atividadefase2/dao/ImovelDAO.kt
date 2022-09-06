@@ -24,6 +24,47 @@ class ImovelDAO(val context: Context) {
         db.close()
     }
 
+    public fun alterarEnderecoImovel(endereco:String, inscricao:String){
+        /*
+         val dbConsulta = dbhelper.writableDatabase
+        dbConsulta.delete("tbl_imovel","tbl_imovel.inscricao = $inscricao",null)
+        dbConsulta.close()
+         */
+
+        val dbConsulta = dbhelper.writableDatabase
+
+        val dados = ContentValues()
+        //dados.put("inscricao",inscricao)
+        dados.put("endereco", endereco)
+
+        print("INSCRICAOOOOOO")
+        println(inscricao)
+        print("ENDERECO")
+        println(endereco)
+        println("RESULTADO")
+        println(dbConsulta.update("tbl_imovel",dados,"inscricao like "+inscricao,null))
+
+        //dbConsulta.rawQuery("update tbl_imovel set endereco = '$endereco'  where tbl_imovel.id_imovel = '$id_imovel'",null)
+        dbConsulta.close()
+
+    }
+    public fun alterarTamanhoImovel(tamanho:Int, inscricao: String){
+        val dbConsulta = dbhelper.writableDatabase
+
+        val dados = ContentValues()
+
+        dados.put("tamanho", tamanho)
+
+        dbConsulta.update("tbl_imovel",dados,"inscricao like "+inscricao,null)
+        //dbConsulta.rawQuery()
+        dbConsulta.close()
+
+    }
+
+
+
+
+
     public fun consultarImovel(id_cidadao: Int): MutableList<Imovel> {
         val dbConsulta = dbhelper.readableDatabase
         var listaImoveis: MutableList<Imovel> = mutableListOf()

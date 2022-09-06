@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/noto"
-    android:padding="32dp"
-    tools:context=".AtualizarImovelActivity">
-
+    tools:context=".AlterarDadosImovelActivity">
 
     <ImageView
         android:id="@+id/imageViewLogo"
@@ -25,7 +22,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="40dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewAtualizarImovel"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="@+id/imageViewLogo"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imageViewLogo"
@@ -90,68 +87,72 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textViewAtualizarImovel"
+        android:id="@+id/textViewAlterarDadosImovel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-light"
-        android:text="Atualizar Imóvel"
+        android:text="Alterar Dados do  Imóvel"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo"
-        tools:layout_editor_absoluteX="143dp" />
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="289dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAtualizarImovel">
+        app:layout_constraintTop_toBottomOf="@+id/textViewAlterarDadosImovel">
 
         <TextView
-            android:id="@+id/textViewNumeroDaMatricula1"
+            android:id="@+id/textViewEndereçoNovoImovel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Informe o número de inscrição do imóvel que deseja Alterar"
-            android:textColor="@android:color/holo_red_dark"
-            android:textStyle="bold" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView2"
-            android:layout_width="309dp"
-            android:layout_height="221dp"
-            app:layoutManager="LinearLayoutManager" />
+            android:text="Endereço" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/editTextTextEndereçoAlteradoImovel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/textViewConfirmacaoDeletarImovel"
+            android:id="@+id/textViewTamanhoNovoImovel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tem certeza que quer deletar o Imóvel ID - Endereço ?"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:text="Tamanho (m²)" />
+
+        <EditText
+            android:id="@+id/editTextTextTamanhoAlteradoImovel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/buttonConfirmacaoDeletarImovel"
+            android:id="@+id/buttonAlterarDadosImovel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:backgroundTint="@color/vermelho_botao"
-            android:text="Alterar"
+            android:backgroundTint="@color/verde_botao"
+            android:text="Cadastrar"
             android:textColor="@color/white"
-            app:cornerRadius="30dp"
-            app:icon="@drawable/delete"
-            app:iconGravity="textEnd" />
+            app:cornerRadius="30dp" />
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

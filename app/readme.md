@@ -2,9 +2,9 @@
 
 ### Quem Somos
 Ana Sofia Nunez de Abreu
-Bruno Vieira Campos Gouveia
-Rafael Kimihiro Moribe
-Tiago Vieira Cavalcante
+<br> Bruno Vieira Campos Gouveia
+<br> Rafael Kimihiro Moribe
+<br> Tiago Vieira Cavalcante
 
 ### Introdução
 O Aplicativo foi desenvolvido em Kotlin com o conhecimento adquirido no conteúdo disponibilizado pelo material da FIAP. Para persistência dos dados foi utilizado o SQLite pois assim seria possível implementar o modelo relacional desenhado na etapa anterior.

@@ -23,12 +23,13 @@ class CadastrarImovelActivity : AppCompatActivity() {
         var cidadao: Cidadao = intent.getSerializableExtra("cidadao") as Cidadao
 
 
-        var imovelDao:ImovelDAO = ImovelDAO(this)
+        var imovelDao: ImovelDAO = ImovelDAO(this)
         binding = ActivityCadastrarImovelBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         //vincular com a view model
-        cadastrarImovelViewModel = ViewModelProvider.NewInstanceFactory().create(CadastrarImovelActivityViewModel::class.java)
+        cadastrarImovelViewModel = ViewModelProvider.NewInstanceFactory()
+            .create(CadastrarImovelActivityViewModel::class.java)
 
         //a cada alteração no campo de tamanho do imóvel, atualiza o valor do tamanho na View Model e calcula o IPTU
         binding.editTextTextTamanhoNovoImovel.doAfterTextChanged {
@@ -38,26 +39,34 @@ class CadastrarImovelActivity : AppCompatActivity() {
 
         //Ações atreladas aos cliques nos botões da tela de Cadastro
         binding.buttonHeaderImovel.setOnClickListener({
-            var intent = Intent(this,ImoveisActivity::class.java)
+            var intent = Intent(this, ImoveisActivity::class.java)
             startActivity(intent)
         })
 
         binding.buttonHeaderHome.setOnClickListener({
-            var intent = Intent(this,HomeActivity::class.java)
+            var intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         })
 
         binding.buttonHeaderLogout.setOnClickListener({
-            var intent = Intent(this,MainActivity::class.java)
+            var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         })
 
-        //Ao clicar em cadastrar, será adicionado um novo Imóvel ao banco de dados
-        // e será apresentado o valor previsto de IPTU, conforme calculado na View Model
+
         binding.buttonCadastrarNovoImovel.setOnClickListener({
-            gravarImovel(imovelDao,cidadao)
-            Toast.makeText(this,"Solicitação Registrada. Previsão de IPTU: R$ ${String.format("%,.2f",cadastrarImovelViewModel.iptu.value)}",Toast.LENGTH_LONG).show()
-            var intent = Intent(this,ImoveisActivity::class.java)
+            gravarImovel(imovelDao, cidadao)
+            Toast.makeText(
+                this,
+                "Solicitação Registrada. Previsão de IPTU: R$ ${
+                    String.format(
+                        "%,.2f",
+                        cadastrarImovelViewModel.iptu.value
+                    )
+                }",
+                Toast.LENGTH_LONG
+            ).show()
+            var intent = Intent(this, ImoveisActivity::class.java)
             startActivity(intent)
         })
 
@@ -71,14 +80,13 @@ class CadastrarImovelActivity : AppCompatActivity() {
             binding.editTextTextEndereONovoImovel.text.toString(),
             binding.editTextTextCepNovoImovel.text.toString(),
             binding.editTextTextTamanhoNovoImovel.text.toString().toInt(),
-            binding.editTextTextTamanhoNovoImovel.text.toString().toInt()*(1+Math.random()), // Nao entendi aqui direito como chamar o metodo para calcular o IPTU...
+            binding.editTextTextTamanhoNovoImovel.text.toString()
+                .toInt() * (1 + Math.random()),
             cidadao.id_cidadao
         )
         imovelDAO.createImovel(imovel)
-        //val imovelDAO = ImovelDAO(this)
-        //imovelDAO.createImovel(imovel)
-    }
 
+    }
 
 
 }

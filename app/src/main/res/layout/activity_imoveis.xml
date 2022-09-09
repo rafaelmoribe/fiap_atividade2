@@ -89,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/azul_background"
-            android:text="Cadastrar"
+            android:text="Cadastrar Imóveis"
             android:textColor="@color/white"
             app:icon="@android:drawable/ic_menu_add"
             app:iconGravity="end"
@@ -101,7 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/azul_background"
-            android:text="Apagar"
+            android:text="Apagar Imóveis"
             android:textColor="@color/white"
             app:icon="@android:drawable/ic_menu_add"
             app:iconGravity="end"
@@ -124,7 +124,8 @@
             android:id="@+id/buttonAlterarDados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:backgroundTint="@color/azul_background"
+            android:text="Atualizar Dados" />
 
     </LinearLayout>
 
@@ -153,7 +154,7 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
         app:layout_constraintStart_toStartOf="@+id/linearLayout4"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"/>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewImoveis"

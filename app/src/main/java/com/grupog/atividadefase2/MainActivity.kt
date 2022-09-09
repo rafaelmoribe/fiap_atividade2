@@ -26,47 +26,34 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //vincular com a view model
-        mainActivityViewModel = ViewModelProvider.NewInstanceFactory().create(MainActivityViewModel::class.java)
 
-        //a cada alteração nos campos de usuário e senha, calcular a função de segurança
-        /*
-        binding.editTextTextUserCode.doAfterTextChanged {
-            mainActivityViewModel.cidadao.value = it.toString().toInt()
-            mainActivityViewModel.getSecurityData()
-        }
-
-        binding.editTextTextPassword.doAfterTextChanged {
-            mainActivityViewModel.senha.value = it.toString()
-            mainActivityViewModel.getSecurityData()
-        }*/
+        mainActivityViewModel =
+            ViewModelProvider.NewInstanceFactory().create(MainActivityViewModel::class.java)
 
 
-        //Validar que ao clicar no botão de Login, o usuário está apto para explorar as outras áreas da aplicação
         binding.buttonLogin.setOnClickListener {
 
-            val cidadaoDAO:CidadaoDAO = CidadaoDAO(this)
-            //println("CODIGO DO USUARIAO")
-            //println(binding.editTextTextUserCode.text.toString())
+            val cidadaoDAO: CidadaoDAO = CidadaoDAO(this)
 
-            var cidadao:Cidadao = cidadaoDAO.consultarCidadao(binding.editTextTextUserCode.text.toString())
 
-            if(cidadao.id_cidadao>0){
-                var intent = Intent(this,HomeActivity::class.java)
-                Toast.makeText(this,"LOGIN BEM SUCEDIDO",Toast.LENGTH_SHORT).show()
-                intent.putExtra("cidadao",cidadao)
+            var cidadao: Cidadao =
+                cidadaoDAO.consultarCidadao(binding.editTextTextUserCode.text.toString())
+
+            if (cidadao.id_cidadao > 0) {
+                var intent = Intent(this, HomeActivity::class.java)
+                Toast.makeText(this, "LOGIN BEM SUCEDIDO", Toast.LENGTH_SHORT).show()
+                intent.putExtra("cidadao", cidadao)
                 startActivity(intent)
 
 
-
             } else {
-                Toast.makeText(this,"Acesso Negado. Favor revisar código de usuário e senha.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Acesso Negado. CPF não encontrado", Toast.LENGTH_LONG).show()
             }
         }
 
 
         binding.buttonActivityCadastro.setOnClickListener {
-            val intent = Intent(this,CadastrarDadosActivity::class.java)
+            val intent = Intent(this, CadastrarDadosActivity::class.java)
             startActivity(intent)
         }
 

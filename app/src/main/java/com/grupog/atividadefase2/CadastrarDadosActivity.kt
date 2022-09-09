@@ -21,14 +21,14 @@ class CadastrarDadosActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonCadastrarPessoa.setOnClickListener {
-            val cidadao:Cidadao = Cidadao(
+            val cidadao: Cidadao = Cidadao(
                 0,
                 binding.editTextCadastroNome.text.toString(),
                 binding.editTextCPF.text.toString(),
                 binding.editTextTelefone.text.toString(),
                 binding.editTextSenha.text.toString()
             )
-            val cidadaoDAO:CidadaoDAO = CidadaoDAO(this)
+            val cidadaoDAO: CidadaoDAO = CidadaoDAO(this)
             cidadaoDAO.createCidadao(cidadao)
         }
 
@@ -44,13 +44,11 @@ class CadastrarDadosActivity : AppCompatActivity() {
                 binding.editTextIPTU.text.toString().toDouble(),
                 binding.editTextIdCidadao.text.toString().toInt()
             )
-            println("CHEGOU AQUI CRIOU O BJETO")
-            val imovelDAO:ImovelDAO = ImovelDAO(this)
+
+            val imovelDAO: ImovelDAO = ImovelDAO(this)
             imovelDAO.createImovel(imovel)
 
         }
-
-
 
 
     }

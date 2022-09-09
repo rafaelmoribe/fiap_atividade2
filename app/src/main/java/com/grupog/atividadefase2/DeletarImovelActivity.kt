@@ -20,12 +20,13 @@ class DeletarImovelActivity : AppCompatActivity() {
         setContentView(R.layout.activity_deletar_imovel)
         supportActionBar!!.hide()
 
-        var cidadao:Cidadao = intent.getSerializableExtra("cidadao") as Cidadao
+        var cidadao: Cidadao = intent.getSerializableExtra("cidadao") as Cidadao
 
 
         var imovelDao: ImovelDAO = ImovelDAO(this)
 
-        var listaDeImovel:MutableList<Imovel> = imovelDao.consultarImovel(cidadao.id_cidadao) // Arrumar
+        var listaDeImovel: MutableList<Imovel> =
+            imovelDao.consultarImovel(cidadao.id_cidadao) // Arrumar
 
 
         binding = ActivityDeletarImovelBinding.inflate(layoutInflater)
@@ -33,7 +34,7 @@ class DeletarImovelActivity : AppCompatActivity() {
 
 
         val recyclerView: RecyclerView = binding.recyclerView2
-        recyclerView.adapter = ItemAdapter(this,listaDeImovel)
+        recyclerView.adapter = ItemAdapter(this, listaDeImovel)
 
 
         //recebe as variáveis da Activity Anterior (Home Imóveis)
@@ -46,40 +47,36 @@ class DeletarImovelActivity : AppCompatActivity() {
 
         //Ações atreladas aos cliques nos botões da tela de Deletar Imóveis
         binding.buttonHeaderImovel.setOnClickListener({
-            var intent = Intent(this,ImoveisActivity::class.java)
+            var intent = Intent(this, ImoveisActivity::class.java)
             startActivity(intent)
         })
 
         binding.buttonHeaderHome.setOnClickListener({
-            var intent = Intent(this,HomeActivity::class.java)
+            var intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         })
 
         binding.buttonHeaderLogout.setOnClickListener({
-            var intent = Intent(this,MainActivity::class.java)
+            var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         })
 
         binding.buttonConfirmacaoDeletarImovel.setOnClickListener({
-            //falta inserir função para apagar imovel no banco
-            //falta inserir toast de sucesso
-            //Toast.makeText(activity, mensagem, Toast.LENGTH_LONG).show()
-            //var intent = Intent(this,ImoveisActivity::class.java)
-            //startActivity(intent)
-            var  possuiImovelComInscricao:Boolean = false
+
+            var possuiImovelComInscricao: Boolean = false
             var inscricao = binding.editTextNumber.text.toString().toInt()
-            for (imovel in listaDeImovel){
-                if (imovel.inscricao.toString().toInt()==inscricao){
+            for (imovel in listaDeImovel) {
+                if (imovel.inscricao.toString().toInt() == inscricao) {
                     possuiImovelComInscricao = true
                     break
                 }
             }
-            if (possuiImovelComInscricao){
+            if (possuiImovelComInscricao) {
                 imovelDao.apagarImovel(inscricao)
-                Toast.makeText(this,"Imóvel apagado com sucesso",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Imóvel apagado com sucesso", Toast.LENGTH_LONG).show()
                 finish()
-            }else{
-                Toast.makeText(this,"Número de inscrição inválido",Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Número de inscrição inválido", Toast.LENGTH_LONG).show()
                 //finish()
             }
 

@@ -16,11 +16,10 @@
 
         <ImageView
             android:id="@+id/item_image"
-            android:importantForAccessibility="no"
-            android:scaleType="centerInside"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            />
+            android:importantForAccessibility="no"
+            android:scaleType="centerInside" />
     </LinearLayout>
 
 </LinearLayout>

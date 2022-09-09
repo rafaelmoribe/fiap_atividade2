@@ -20,7 +20,7 @@ class WelcomeActivity : AppCompatActivity() {
 
         binding.buttonIniciar.setOnClickListener {
             //popular banco
-            var intent = Intent(this,MainActivity::class.java)
+            var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 

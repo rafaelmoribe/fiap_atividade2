@@ -3,7 +3,7 @@ package com.grupog.atividadefase2
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainActivityViewModel: ViewModel() {
+class MainActivityViewModel : ViewModel() {
 
     private val mCidadao = MutableLiveData<Int>()
     var cidadao = mCidadao
@@ -20,8 +20,8 @@ class MainActivityViewModel: ViewModel() {
         mAutorization.value = false
     }
 
-    fun getSecurityData(cpf:String){
-        val usuarioNoBanco:Boolean=false
+    fun getSecurityData(cpf: String) {
+        val usuarioNoBanco: Boolean = false
 
 
 

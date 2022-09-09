@@ -45,10 +45,7 @@ class AtualizarImovelActivity : AppCompatActivity() {
         val cepAtual = intent.getStringExtra("cep_atual")
         val tamanhoAtual = intent.getStringExtra("tamanho_atual")
 
-        //Preenche os campos de texto editáveis com as informações atuais dos imóveis
-        //binding.editTextTextEndereOAtualizarImovel.setText(enderecoAtual)
-        //binding.editTextTextCEPAtualizarImovel.setText(cepAtual)
-        //binding.editTextTextTamanhoAtualizarImovel.setText(tamanhoAtual)
+
 
         //Ações atreladas aos cliques nos botões da tela de Atualizar Imóvel
         binding.buttonHeaderImovel.setOnClickListener({
@@ -66,17 +63,10 @@ class AtualizarImovelActivity : AppCompatActivity() {
             startActivity(intent)
         })
 
-        /*
-        binding.buttonCancelarAtualizacao.setOnClickListener({
-            var intent = Intent(this,ImoveisActivity::class.java)
-            startActivity(intent)
-        })
-        */
+
 
         binding.buttonConfirmacaoDeletarImovel.setOnClickListener({
-            //falta inserir função para modificar no banco
-            //falta inserir um toast de sucesso
-            //Toast.makeText(activity, mensagem, Toast.LENGTH_LONG).show()
+
             var intent = Intent(this,AlterarDadosImovelActivity::class.java)
 
             var inscricaoImovel:Int = binding.editTextNumber.text.toString().toInt()

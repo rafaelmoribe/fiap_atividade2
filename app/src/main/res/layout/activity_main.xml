@@ -76,7 +76,8 @@
         android:id="@+id/buttonActivityCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Abrir Cadastro"
+        android:backgroundTint="@color/azul_background"
+        android:text="Abrir Cadastro (Popula SQLite)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />

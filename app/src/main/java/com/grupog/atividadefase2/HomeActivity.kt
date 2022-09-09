@@ -17,7 +17,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar!!.hide()
 
-        var cidadao:Cidadao = intent.getSerializableExtra("cidadao") as Cidadao
+        var cidadao: Cidadao = intent.getSerializableExtra("cidadao") as Cidadao
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -26,39 +26,51 @@ class HomeActivity : AppCompatActivity() {
 
         //Ações atreladas aos cliques nos botões da tela Home
         binding.buttonGerenciarMeusImoveis.setOnClickListener({
-            var intent = Intent(this,ImoveisActivity::class.java)
-            intent.putExtra("cidadao",cidadao)
+            var intent = Intent(this, ImoveisActivity::class.java)
+            intent.putExtra("cidadao", cidadao)
             startActivity(intent)
         }
         )
 
-        binding.buttonIPTU.setOnClickListener( {
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://recifeemdia.recife.pe.gov.br/emitirDamIptu"))
+        binding.buttonIPTU.setOnClickListener({
+            val i = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://recifeemdia.recife.pe.gov.br/emitirDamIptu")
+            )
             startActivity(i)
         })
 
-        binding.buttonLicitacoes.setOnClickListener( {
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.recife.pe.gov.br/portalcompras/app/home.php"))
+        binding.buttonLicitacoes.setOnClickListener({
+            val i = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("http://www.recife.pe.gov.br/portalcompras/app/home.php")
+            )
             startActivity(i)
         })
 
-        binding.buttonRegulacoes.setOnClickListener( {
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("http://transparencia.recife.pe.gov.br/codigos/web/estaticos/estaticos.php?nat=CON#filho"))
+        binding.buttonRegulacoes.setOnClickListener({
+            val i = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("http://transparencia.recife.pe.gov.br/codigos/web/estaticos/estaticos.php?nat=CON#filho")
+            )
             startActivity(i)
         })
 
-        binding.buttonCovid19.setOnClickListener( {
+        binding.buttonCovid19.setOnClickListener({
             val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://minhavacina.recife.pe.gov.br/"))
             startActivity(i)
         })
 
-        binding.buttonOutrosServicos.setOnClickListener( {
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www2.recife.pe.gov.br/servicos/cidadao"))
+        binding.buttonOutrosServicos.setOnClickListener({
+            val i = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www2.recife.pe.gov.br/servicos/cidadao")
+            )
             startActivity(i)
         })
 
         binding.buttonHeaderLogout2.setOnClickListener({
-            var intent = Intent(this,MainActivity::class.java)
+            var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         })
     }
